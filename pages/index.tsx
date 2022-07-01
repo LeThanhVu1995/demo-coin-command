@@ -217,8 +217,8 @@ const Home: NextPage = () => {
                     fill="#808089"
                   ></path>
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5ZM3.75 10C3.75 6.54822 6.54822 3.75 10 3.75C13.4518 3.75 16.25 6.54822 16.25 10C16.25 13.4518 13.4518 16.25 10 16.25C6.54822 16.25 3.75 13.4518 3.75 10Z"
                     fill="#808089"
                   ></path>
@@ -256,8 +256,8 @@ const Home: NextPage = () => {
                     fill="#808089"
                   ></path>
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5ZM3.75 10C3.75 6.54822 6.54822 3.75 10 3.75C13.4518 3.75 16.25 6.54822 16.25 10C16.25 13.4518 13.4518 16.25 10 16.25C6.54822 16.25 3.75 13.4518 3.75 10Z"
                     fill="#808089"
                   ></path>
@@ -304,14 +304,18 @@ const Home: NextPage = () => {
             <div>
               <span className="text-[#818DA6]">Chọn nhanh % tài sản</span>
               <Slider
-                trackStyle={{
-                  backgroundColor: "#fdd116",
-                  borderColor: "#fdd116",
-                }}
-                handleStyle={{
-                  borderColor: "#fdd116",
-                  backgroundColor: "#fdd116",
-                }}
+                trackStyle={
+                  {
+                    backgroundColor: "#fdd116",
+                    borderColor: "#fdd116",
+                  } as any
+                }
+                handleStyle={
+                  {
+                    borderColor: "#fdd116",
+                    backgroundColor: "#fdd116",
+                  } as any
+                }
                 range
                 marks={marks}
                 defaultValue={[26, 37]}
@@ -333,7 +337,6 @@ const Home: NextPage = () => {
               Đăng Nhập
             </button>
           </div>
-
         </div>
       </main>
     </div>

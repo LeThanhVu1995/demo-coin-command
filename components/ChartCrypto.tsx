@@ -8,19 +8,20 @@ const ChartCrypto = () => {
   useEffect(() => {
     if (chartRef.current.childNodes.length !== 0) return;
 
-    const chart = createChart(chartRef.current || "", {
+    const config = {
       width: 500,
       height: 250,
       layout: {
-        backgroundColor: '#2f3d4a',
-        textColor: 'rgba(255, 255, 255, 0.9)',
+        backgroundColor: "#2f3d4a",
+        textColor: "rgba(255, 255, 255, 0.9)",
       },
       priceScale: {
         scaleMargins: {
           top: 0.3,
           bottom: 0.25,
         },
-        borderVisible: false,
+        borderVisible: true,
+        borderColor: "#485c7b",
       },
       grid: {
         vertLines: {
@@ -33,13 +34,12 @@ const ChartCrypto = () => {
       crosshair: {
         mode: CrosshairMode.Normal,
       },
-      priceScale: {
-        borderColor: "#485c7b",
-      },
       timeScale: {
         borderColor: "#485c7b",
       },
-    });
+    } as any;
+
+    const chart = createChart(chartRef.current || "", config);
 
     const areaSeries = chart.addAreaSeries({
       topColor: "rgba(253, 209, 22, 0.56)",
@@ -48,7 +48,7 @@ const ChartCrypto = () => {
       lineWidth: 2,
     });
 
-    const volumeSeries = chart.addHistogramSeries({
+    const configvolmne: any = {
       color: "#26a69a",
       priceFormat: {
         type: "volume",
@@ -58,7 +58,9 @@ const ChartCrypto = () => {
         top: 0.8,
         bottom: 0,
       },
-    });
+    };
+
+    const volumeSeries = chart.addHistogramSeries(configvolmne);
 
     areaSeries.setData(areaData);
     volumeSeries.setData(histogramData);
