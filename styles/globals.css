@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  max-width: 500px;
+  margin: auto;
+  background: #2f3d4a;
+  padding: 8px 8px;
+}
+
+.ant-slider-dot-active {
+  border-color: #fff !important;
+}
